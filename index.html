@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Form</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel mt-2">
+        <div class="panel-heading text-center">
+          <h1 className="text-center ">Creating Form</h1>
+          <form>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Name:</label
+              >
+              <input
+                type="name"
+                class="form-control"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                <small class="form-text text-muted">Format: 123-456-7890</small>
+            <div>
+              <div><label>Gender:</label></div>
+              <label for="male "
+                ><input
+                  type="radio"
+                  name="gender"
+                  value="m"
+                  id="male"
+                />Male</label
+              >
+              <label for="female "
+                ><input
+                  type="radio"
+                  name="gender"
+                  value="m"
+                  id="male"
+                />Female</label
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

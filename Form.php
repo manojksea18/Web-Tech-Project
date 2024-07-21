@@ -18,9 +18,24 @@
     $gender = $_POST['gender'];
     $country = $_POST['country'];
     $servername = "localhost";
-    $username = "username";
+    $username = "root";
     $password = "";
     $db = "dbhcoe";
+
+    //create connection
+    $conn = mysqli_connect($servername, $username, $password, $db);
+    //check connection
+    if (isset($conn)) {
+        echo 'database connection is successful';
+    } else {
+        echo 'database connection unsuccessful';
+    }
+    $sql = "INSERT INTO `form` (`Name`,`Password`,`Email`,`Gender`,`Country`)VALUES ('$name','$pword','$email','$gender','$country');";
+    if (isset($result)) {
+        echo 'Data inserted successfully';
+    } else {
+        echo 'Data insertion failed';
+    }
 
 
     ?>
