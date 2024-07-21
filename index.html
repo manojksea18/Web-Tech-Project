@@ -14,10 +14,10 @@
     <div class="container">
       <div class="panel mt-2">
         <div class="panel-heading text-center">
-          <h1 className="text-center ">Creating Form</h1>
-          <form>
+          <h1 className="text-center text-bold">Creating Form</h1>
+          <form action="Form.php" method="post">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
+              <label for="name" class="form-label  d-flex justiy-content-start required"
                 >Name:</label
               >
               <input
@@ -25,10 +25,23 @@
                 class="form-control"
                 id="name"
                 placeholder="enter your name"
+                value="name"
               />
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
+                <label for="password" class="form-label  d-flex justiy-content-start required"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="enter your pass"
+                  value=""
+                />
+              </div>
+            <div class="mb-3">
+              <label for="email" class="form-label d-flex justiy-content-start"
                 >Email address</label
               >
               <input
@@ -36,30 +49,43 @@
                 class="form-control"
                 id="email"
                 placeholder="name@example.com"
+                value=""
               />
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
-                <small class="form-text text-muted">Format: 123-456-7890</small>
+                <label for="number" class="d-flex justiy-content-start">Number:</label>
+                <input type="tel" class="form-control " id="number" name="number" pattern="9867978561" placeholder="9867978561" value="">
+                <small class="form-text text-muted"></small>
             <div>
-              <div><label>Gender:</label></div>
-              <label for="male "
+              <div><label class="d-flex justiy-content-start">Gender:</label></div>
+              <label for="male " class="d-flex justiy-content-start"
                 ><input
                   type="radio"
                   name="gender"
-                  value="m"
+                  value=""
                   id="male"
                 />Male</label
               >
-              <label for="female "
+              <label for="female " class="d-flex justiy-content-start"
                 ><input
                   type="radio"
                   name="gender"
-                  value="m"
+                  value=""
                   id="male"
                 />Female</label
               >
+              <label for="Other " class="d-flex justiy-content-start"
+              ><input
+                type="radio"
+                name="gender"
+                value=""
+                id="Others"
+              />Other</label
+            >
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary d-flex justiy-content-start">Submit</button>
+
             </div>
           </form>
         </div>

@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Form</title>
-    <style>
-    </style>
-</head>
-
-<body>
     <?php
     //to connect db and instert data to db
     $name = $_POST['name'];
-    $pword = $_POST['password'];
+    $password = $_POST['password'];
     $email = $_POST['email'];
+    $number = $_POST['number'];
     $gender = $_POST['gender'];
-    $country = $_POST['country'];
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -24,19 +13,28 @@
 
     //create connection
     $conn = mysqli_connect($servername, $username, $password, $db);
-    //check connection
-    if (isset($conn)) {
-        echo 'database connection is successful';
-    } else {
-        echo 'database connection unsuccessful';
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "INSERT INTO `form` (`Name`,`Password`,`Email`,`Gender`,`Country`)VALUES ('$name','$pword','$email','$gender','$country');";
-    if (isset($result)) {
-        echo 'Data inserted successfully';
-    } else {
-        echo 'Data insertion failed';
+
+    $stmt = $conn->prepare("INSERT INTO registration (name, password, email, number, gender) VALUES (?, ?, ?, ?, ?)");
+    if ($stmt === false) {
+        die("Prepare failed: " . $conn->error);
     }
+
+    $stmt->bind_param("sssis", $name, $password, $email, $number, $gender);
+
+    // Execute statement
+    if ($stmt->execute()) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
 
 
     ?>
-</body>
