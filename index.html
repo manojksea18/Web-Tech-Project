@@ -14,75 +14,113 @@
     <div class="container">
       <div class="panel mt-2">
         <div class="panel-heading text-center">
-          <h1 className="text-center text-bold">Creating Form</h1>
+          <h1 class="text-center text-bold">Creating Form</h1>
           <form action="Form.php" method="post">
             <div class="mb-3">
-              <label for="name" class="form-label  d-flex justiy-content-start required"
-                >Name:</label
+              <label
+                for="name"
+                class="form-label d-flex justify-content-start required"
               >
+                Name:
+              </label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
-                placeholder="enter your name"
+                placeholder="Enter your name"
                 name="name"
+                required
               />
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label  d-flex justiy-content-start required"
-                  >Password:</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="enter your pass"
-                    name="password"                
-/>
-              </div>
-            <div class="mb-3">
-              <label for="email" class="form-label d-flex justiy-content-start"
-                >Email address</label
+              <label
+                for="password"
+                class="form-label d-flex justify-content-start required"
               >
+                Password:
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter your password"
+                name="password"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="email"
+                class="form-label d-flex justify-content-start"
+              >
+                Email address:
+              </label>
               <input
                 type="email"
                 class="form-control"
                 id="email"
                 placeholder="name@example.com"
-                 name="email"              
- />
+                name="email"
+                required
+              />
             </div>
-            <div class="form-group">
-                <label for="number" class="d-flex justiy-content-start">Number:</label>
-                <input type="tel" class="form-control " id="number" name="number" pattern="9867978561" placeholder="9867978561" value="">
-                <small class="form-text text-muted"></small>
-            <div>
-              <div><label class="d-flex justiy-content-start">Gender:</label></div>
-              <label for="male " class="d-flex justiy-content-start"
-                ><input
+            <div class="form-group mb-3">
+              <label for="number" class="d-flex justify-content-start"
+                >Number:</label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                id="number"
+                name="number"
+                pattern="[0-9]{10}"
+                placeholder="9867978561"
+                required
+              />
+              <small class="form-text text-muted"
+                >Enter a valid 10-digit number.</small
+              >
+            </div>
+            <div class="form-group mb-3">
+              <label class="d-flex justify-content-start">Gender:</label>
+              <label for="male" class="d-flex justify-content-start">
+                <input
                   type="radio"
                   name="gender"
+                  value="Male"
                   id="male"
-                />Male</label
-              >
-              <label for="female " class="d-flex justiy-content-start"
-                ><input
+                  required
+                />
+                Male
+              </label>
+              <label for="female" class="d-flex justify-content-start">
+                <input
                   type="radio"
                   name="gender"
-                  id="male"
-                />Female</label
-              >
-              <label for="Other " class="d-flex justiy-content-start"
-              ><input
-                type="radio"
-                name="gender"
-                id="Others"
-              />Other</label
-            >
+                  value="Female"
+                  id="female"
+                  required
+                />
+                Female
+              </label>
+              <label for="other" class="d-flex justify-content-start">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Other"
+                  id="other"
+                  required
+                />
+                Other
+              </label>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary d-flex justiy-content-start">Submit</button>
-
+              <button
+                type="submit"
+                class="btn btn-primary d-flex justify-content-start"
+              >
+                Submit
+              </button>
             </div>
           </form>
         </div>
